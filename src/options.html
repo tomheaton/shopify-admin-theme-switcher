@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Shopify Admin Theme Switcher</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font:
+          14px/1.5 system-ui,
+          sans-serif;
+      }
+      body {
+        margin: 16px;
+        min-width: 400px;
+      }
+      fieldset {
+        border: 0;
+        margin: 0 0 16px;
+        padding: 0;
+      }
+      legend {
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      label {
+        display: block;
+      }
+      .hint {
+        color: GrayText;
+        margin: 4px 0 12px;
+      }
+      ul {
+        margin: 4px 0;
+        padding: 0;
+        list-style: none;
+      }
+      li {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .add {
+        display: flex;
+        gap: 8px;
+        margin-top: 4px;
+      }
+      .add input {
+        flex: 1;
+      }
+      .error {
+        color: #d72c0d;
+        margin: 4px 0 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="settings">
+      <fieldset>
+        <legend>Colour scheme</legend>
+        <label><input type="radio" name="mode" value="light" /> Light</label>
+        <label><input type="radio" name="mode" value="dark" /> Dark</label>
+        <label><input type="radio" name="mode" value="system" /> Auto (follow the system)</label>
+      </fieldset>
+      <fieldset>
+        <legend>Embedded apps</legend>
+        <p class="hint">
+          Each app is served from its developer's own site, so the extension needs access to that
+          site. It only changes pages shown inside the Shopify admin, and only apps built with
+          Polaris web components follow the theme.
+        </p>
+        <label
+          ><input type="checkbox" id="all-apps" name="allApps" /> All apps (Chrome asks for all
+          sites)</label
+        >
+        <div id="app-hosts">
+          <label for="app-host">Or only these apps:</label>
+          <ul id="app-host-list"></ul>
+          <div class="add">
+            <input id="app-host" name="appHost" placeholder="my-app.example.com" />
+            <button type="submit">Add</button>
+          </div>
+          <p id="app-host-error" class="error" role="alert" hidden>
+            Enter an app's HTTPS host, such as my-app.example.com.
+          </p>
+        </div>
+      </fieldset>
+    </form>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

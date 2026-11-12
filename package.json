@@ -1,0 +1,31 @@
+{
+  "name": "shopify-admin-theme-switcher",
+  "version": "0.6.0",
+  "private": true,
+  "description": "Chrome extension that switches the Shopify admin and its embedded apps between light, dark and auto colour schemes",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "check": "biome ci && pnpm typecheck && pnpm test && pnpm build",
+    "lint": "biome lint",
+    "format": "biome check --write",
+    "typecheck": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "node scripts/build.ts",
+    "dev": "node scripts/build.ts --watch"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.6",
+    "@types/chrome": "0.3.7",
+    "@types/node": "26.6.6",
+    "esbuild": "0.28.2",
+    "happy-dom": "21.0.4",
+    "typescript": "7.0.2",
+    "vitest": "5.1.0"
+  },
+  "packageManager": "pnpm@12.18.0"
+}

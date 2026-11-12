@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Shopify Admin Theme Switcher",
+  "version": "0.6.0",
+  "description": "Switches the Shopify admin, and optionally its embedded apps, between light, dark and auto colour schemes.",
+  "minimum_chrome_version": "102",
+  "permissions": ["scripting", "storage"],
+  "host_permissions": ["https://admin.shopify.com/*"],
+  "optional_host_permissions": ["https://*/*"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Shopify Admin Theme Switcher"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
+}

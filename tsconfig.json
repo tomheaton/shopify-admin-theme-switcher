@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2024",
+    "lib": ["es2024", "dom", "dom.iterable"],
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
+    // The build script runs on Node's type stripping, which only handles erasable syntax
+    "erasableSyntaxOnly": true,
+    "skipLibCheck": true,
+    "types": ["chrome", "node"]
+  },
+  "include": ["src", "test", "scripts", "*.config.ts"]
+}
